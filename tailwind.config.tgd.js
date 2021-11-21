@@ -4,10 +4,9 @@ const colors = require("tailwindcss/colors");
  * @type { import('@types/tailwindcss/tailwind-config').TailwindConfig }
  */
 module.exports = {
-  darkMode: "class",
-  plugins: [require("@tailwindcss/forms")],
-  purge: ["./theme/**/*.ftl"],
-  mode: "jit",
+  darkMode: 'media',
+  plugins: [require('@tailwindcss/forms')],
+  purge: ['./theme/**/*.ftl'],
   theme: {
     extend: {
       colors: {
