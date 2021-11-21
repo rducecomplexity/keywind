@@ -1,5 +1,7 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "scripts": {
+    "build": "snowpack build",
     "start": "snowpack dev",
     "build": "snowpack build",
     "build-rduce": "shx cp tailwind.config.rduce.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/rduce-keywind",
@@ -9,14 +11,14 @@
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
-    "@tailwindcss/forms": "^0.3.3",
-    "@types/tailwindcss": "^2.2.1",
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^5.0.7",
-    "postcss": "^8.3.6",
+    "@tailwindcss/forms": "^0.3.4",
+    "@types/tailwindcss": "^2.2.4",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.11",
+    "postcss": "^8.3.11",
     "shx": "^0.3.3",
-    "snowpack": "^3.8.6",
-    "tailwindcss": "^2.2.7"
+    "snowpack": "^3.8.8",
+    "tailwindcss": "^2.2.19"
   },
   "dependencies": {
     "alpinejs": "^3.2.3"
