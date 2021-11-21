@@ -1,7 +1,11 @@
 {
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build",
+    "build-rduce": "shx cp tailwind.config.rduce.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/rduce-keywind",
+    "build-pixon": "shx cp tailwind.config.pixon.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/pixon-keywind",
+    "build-tgd": "shx cp tailwind.config.tgd.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/tgd-keywind",
+    "build-all": "yarn build-rduce && yarn build-pixon && yarn build-tgd"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
@@ -10,6 +14,7 @@
     "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.7",
     "postcss": "^8.3.6",
+    "shx": "^0.3.3",
     "snowpack": "^3.8.6",
     "tailwindcss": "^2.2.7"
   },
