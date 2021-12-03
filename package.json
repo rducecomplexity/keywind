@@ -3,9 +3,22 @@
   "scripts": {
     "build": "snowpack build",
     "start": "snowpack dev",
-    "build-rduce": "shx cp tailwind.config.rduce.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/rduce-keywind",
-    "build-pixon": "shx cp tailwind.config.pixon.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/pixon-keywind",
-    "build-tgd": "shx cp tailwind.config.tgd.js tailwind.config.js && snowpack build && shx cp -R ./theme/keywind ./theme/tgd-keywind",
+
+    "backup-keywind": "shx cp -R ./theme/keywind ./theme/keywind-backup",
+    "restore-keywind": "shx rm -R ./theme/keywind && shx mv ./theme/keywind-backup ./theme/keywind",
+
+    "apply-pixon": "shx cp tailwind.config.pixon.js tailwind.config.js && shx cp -R ./theme/keywind-pixon ./theme/keywind",
+    "dist-pixon": "shx mv ./theme/keywind ./theme/pixon-keywind-out",
+    "build-pixon": "yarn backup-keywind && yarn apply-pixon && snowpack build && yarn dist-pixon && yarn restore-keywind",
+
+    "apply-rduce": "shx cp tailwind.config.rduce.js tailwind.config.js && shx cp -R ./theme/keywind-rduce ./theme/keywind",
+    "dist-rduce": "shx mv ./theme/keywind ./theme/rduce-keywind-out",
+    "build-rduce": "yarn backup-keywind && yarn apply-rduce && snowpack build && yarn dist-rduce && yarn restore-keywind",
+
+    "apply-tgd": "shx cp tailwind.config.tgd.js tailwind.config.js && shx cp -R ./theme/keywind-tgd ./theme/keywind",
+    "dist-tgd": "shx mv ./theme/keywind ./theme/tgd-keywind-out",
+    "build-tgd": "yarn backup-keywind && yarn apply-tgd && snowpack build && yarn dist-tgd && yarn restore-keywind",
+
     "build-all": "yarn build-rduce && yarn build-pixon && yarn build-tgd"
   },
   "devDependencies": {
