@@ -10,9 +10,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        //primary: "#0981c4",
-        //secondary: "#10b7eb",
-        primary: colors.green,
+        // Use: https://javisperez.github.io/tailwindcolorshades/
+        primary: {
+          DEFAULT: '#000000',
+          50: '#f2f2f2',
+          100: '#e6e6e6',
+          200: '#bfbfbf',
+          300: '#999999',
+          400: '#4d4d4d',
+          500: '#000000',
+          600: '#000000',
+          700: '#000000',
+          800: '#000000',
+          900: '#000000',
+        },
       },
     },
   },
