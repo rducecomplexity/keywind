@@ -3,23 +3,19 @@
   "scripts": {
     "build": "snowpack build",
     "start": "snowpack dev",
-
-    "backup-keywind": "shx cp -R ./theme/keywind ./theme/keywind-backup",
-    "restore-keywind": "shx mv ./theme/keywind-backup ./theme/keywind",
-
+    "backup-keywind": "shx cp -R ./theme/keywind ./theme/keywind-backup && shx cp tailwind.config.js tailwind.config.backup.js",
+    "restore-keywind": "shx rm -R ./theme/keywind && shx mv ./theme/keywind-backup ./theme/keywind && shx cp tailwind.config.backup.js tailwind.config.js && shx rm tailwind.config.backup.js ",
+    "clean-all": "shx rm -rf ./theme/rduce-keywind-out/ && shx rm -rf ./theme/pixon-keywind-out/ && shx rm -rf ./theme/tgd-keywind-out/",
     "apply-pixon": "shx cp tailwind.config.pixon.js tailwind.config.js && shx cp -R ./theme/pixon-keywind/* ./theme/keywind",
-    "dist-pixon": "shx mv ./theme/keywind ./theme/pixon-keywind-out",
+    "dist-pixon": "shx mv ./theme/keywind/login ./theme/pixon-keywind-out",
     "build-pixon": "yarn backup-keywind && yarn apply-pixon && snowpack build && yarn dist-pixon && yarn restore-keywind",
-
     "apply-rduce": "shx cp tailwind.config.rduce.js tailwind.config.js && shx cp -R ./theme/rduce-keywind/* ./theme/keywind",
-    "dist-rduce": "shx mv ./theme/keywind ./theme/rduce-keywind-out",
+    "dist-rduce": "shx mv ./theme/keywind/login ./theme/rduce-keywind-out",
     "build-rduce": "yarn backup-keywind && yarn apply-rduce && snowpack build && yarn dist-rduce && yarn restore-keywind",
-
     "apply-tgd": "shx cp tailwind.config.tgd.js tailwind.config.js && shx cp -R ./theme/tgd-keywind/* ./theme/keywind",
-    "dist-tgd": "shx mv ./theme/keywind ./theme/tgd-keywind-out",
+    "dist-tgd": "shx mv ./theme/keywind/login ./theme/tgd-keywind-out",
     "build-tgd": "yarn backup-keywind && yarn apply-tgd && snowpack build && yarn dist-tgd && yarn restore-keywind",
-
-    "build-all": "yarn build-rduce && yarn build-pixon && yarn build-tgd"
+    "build-all": "yarn clean-all && yarn build-rduce && yarn build-pixon && yarn build-tgd"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
