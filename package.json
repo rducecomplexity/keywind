@@ -3,7 +3,8 @@
   "scripts": {
     "build": "snowpack build",
     "start": "snowpack dev",
-
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
     "backup-keywind": "shx cp -R ./theme/keywind ./theme/keywind-backup && shx cp tailwind.config.js tailwind.config.backup.js",
     "restore-keywind": "shx rm -rf ./theme/keywind && shx mv ./theme/keywind-backup ./theme/keywind && shx cp tailwind.config.backup.js tailwind.config.js && shx rm tailwind.config.backup.js ",
     "clean-all": "shx rm -rf ./theme/rduce-keywind-out/ && shx rm -rf ./theme/pixon-keywind-out/ && shx rm -rf ./theme/tgd-keywind-out/",
@@ -24,16 +25,15 @@
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
-    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/forms": "^0.4.0",
     "@types/tailwindcss": "^2.2.4",
     "autoprefixer": "^10.4.0",
-    "cssnano": "^5.0.11",
-    "postcss": "^8.3.11",
-    "shx": "^0.3.3",
+    "cssnano": "^5.0.12",
+    "postcss": "^8.4.5",
     "snowpack": "^3.8.8",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^3.0.2"
   },
   "dependencies": {
-    "alpinejs": "^3.2.3"
+    "alpinejs": "^3.7.0"
   }
 }
