@@ -23,6 +23,7 @@
   <html>
     <head>
       <@document.kw />
+      <link rel="icon" href="${url.resourcesCommonPath}/dist/favicon.ico"/>
     </head>
     <body>
       <@container.kw>
