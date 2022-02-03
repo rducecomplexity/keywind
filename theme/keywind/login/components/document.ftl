@@ -11,9 +11,9 @@
     </#list>
   </#if>
 
-  <#if properties.favicons?has_content>
-    <#list properties.favicons?split(" ") as favicon>
-      <link href="${url.resourcesPath}/${favicon?split('==')[0]}" rel="${meta?split('==')[1]}">
+  <#if properties.favicon?has_content>
+    <#list properties.favicon?split(" ") as favicon>
+      <link href="${url.resourcesPath}/${favicon}" rel="icon">
     </#list>
   </#if>
 
